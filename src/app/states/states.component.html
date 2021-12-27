@@ -1,0 +1,28 @@
+<div class="row content2">
+
+  <div class="col-md-3 tablecss" *ngFor="let item of stateData">
+    <table>
+      <tr>
+        <th>State Name</th>
+        <td>{{item}}</td>
+      </tr>
+      <tr>
+        <th>Confirmed</th>
+        <td>{{finalData.confirmed}}</td>
+      </tr>
+      <tr>
+        <th>Active</th>
+        <td>{{finalData.confirmed  - (finalData.recovered + finalData.deaths)}}</td>
+      </tr>
+      <tr>
+        <th>Recovered</th>
+        <td>{{ finalData.recovered }}</td>
+      </tr>
+
+      <tr>
+        <th>Death</th>
+        <td>{{ finalData.deaths }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

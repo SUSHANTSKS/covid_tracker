@@ -1,0 +1,77 @@
+<div class="row content">
+    <div class="col-md-3">
+        <div class="card" style="background-color: #007FFF;">
+            <div class="card-body">
+                <h2 class="card-title">Confirmed</h2>
+                <h3 class="card-text">{{finalData.confirmed}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card" style="background-color: yellow;">
+            <div class="card-body">
+                <h2 class="card-title">Active</h2>
+                <h3 class="card-text">{{finalData.confirmed  - (finalData.recovered + finalData.deaths)}}</h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3">
+        <div class="card" style="background-color: green;">
+            <div class="card-body">
+                <h2 class="card-title">Recovered</h2>
+                <h3 class="card-text">{{finalData.recovered}}</h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3">
+        <div class="card" style="background-color: red;">
+            <div class="card-body">
+                <h2 class="card-title">Deaths</h2>
+                <h3 class="card-text">{{finalData.deaths}}</h3>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row content2">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+        <table>
+            <tr>
+                <th>Populations</th>
+                <td>{{finalData.population}}</td>
+            </tr>
+            <tr>
+                <th>Case per million</th>
+                <td>{{finalData.confirmed / finalData.population}}</td>
+            </tr>
+            <tr>
+                <th>Active Ratio</th>
+                <td>{{ ((finalData.confirmed  - (finalData.recovered + finalData.deaths)) / finalData.confirmed ) * 100}}</td>
+            </tr>
+            <tr>
+                <th>Recovery Ratio</th>
+                <td>{{ (finalData.recovered / finalData.confirmed) * 100 }}</td>
+            </tr>
+
+            <tr>
+                <th>Death Ratio</th>
+                <td>{{ (finalData.deaths / finalData.confirmed) * 100 }}</td>
+            </tr>
+
+
+        </table>
+    </div>
+
+    <div class="col-md-3">
+      
+    </div>
+    <div>
+        Colour Preference :
+        <input type="text" [(ngModel)]="colour" [style.background]="colour" />
+    </div>
+</div>

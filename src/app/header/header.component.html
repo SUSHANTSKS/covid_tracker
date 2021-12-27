@@ -1,0 +1,45 @@
+<nav class="navcss navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand">Country Covid Stats  </a>
+      <div>
+        Colour Preference :
+        <input  [(ngModel)]="colour" [style.background]="colour" />
+    </div>
+      <!-- <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+<!-- 
+      <form class="d-flex">
+        <mat-form-field appearance="fill">
+            <mat-label>Favorite food</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+      </form> -->
+
+
+    <form class="d-flex">
+      
+        <!-- <select class="form-select" aria-label="Default select example">
+            <option selected>Select Country</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select> -->
+
+          <select  #mySelect (change)='SelectedCountry(mySelect.value)'  [(ngModel)]="colour">
+            <option selected>Select Country</option>
+            <option *ngFor="let c of CountryDetails" [value]="c[0]">{{c[0]}}</option> 
+          </select>
+          <!-- {{c | json}} -->
+      </form>
+
+    
+
+  
+    </div>
+  </nav>
